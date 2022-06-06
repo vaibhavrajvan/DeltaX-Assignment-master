@@ -40,7 +40,7 @@
     <div class="input-group form-group">
       <div class="form-group mr-2">
         <select class="form-control ml-2 mr-2" id="castFormControlSelect1">
-          <option *ngFor="let items of actors"><input type="checkbox">{{items.name}}</option>
+          <option *ngFor="let items of actors"><input type="checkbox" name="plot" [(ngModel)] ="movieDetails.plot">{{items.name}}</option>
         </select>
       </div>
       <button type="button" class="btn btn-dark ml-2" data-toggle="modal" data-target="#addactor">
@@ -64,7 +64,7 @@
 <div id="addactor" class=" modal fade card1 mt-5 " tabindex="-1" role="dialog" aria-hidden="true"
   style="height: 600px; width: 600px;">
   <div class="modal-dialog" role="document">
-    <div class="modal-content"> 
+    <div class="modal-content">
       <div class="modal-header">
         <form>
           <div class="form-group ml-2 mr-2">
@@ -75,7 +75,7 @@
               Enter the name of the Artist.
             </small>
           </div>
-        
+
           <div class="form-group ml-2 mr-2 mt-2">
             <label for="yearFormControlSelect">Date of Birth</label>
             <input type="date" [(ngModel)]="actorDetails.dob" #name="ngModel" name="dob" class="form-control"
